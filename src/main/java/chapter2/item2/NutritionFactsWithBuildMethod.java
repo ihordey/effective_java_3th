@@ -1,0 +1,69 @@
+package chapter2.item2;
+
+import lombok.Getter;
+import lombok.ToString;
+
+@Getter
+@ToString
+public class NutritionFactsWithBuildMethod {
+    private final int servingSize;
+    private final int servings;
+    private final int calories;
+    private final int fat;
+    private final int sodium;
+    private final int carbohydrate;
+    private static int outerVal;
+
+    public static Builder build(int servingSize, int servings) {
+     return new Builder(servingSize, servings);
+    }
+
+    public static class Builder {
+        private final int servingSize;
+        private final int servings;
+
+        private int calories = 0;
+        private int fat = 0;
+        private int sodium = 0;
+        private int carbohydrate = 0;
+
+        private Builder(int servingSize, int servings) {
+            this.servingSize = servingSize;
+            this.servings = servings;
+        }
+
+        public Builder calories(int val) {
+            calories = val;
+            outerVal = 23000;
+            return this;
+        }
+
+        public Builder fat(int val) {
+            fat = val;
+            return this;
+        }
+
+        public Builder sodium(int val) {
+            sodium = val;
+            return this;
+        }
+
+        public Builder carbohydrate(int val) {
+            carbohydrate = val;
+            return this;
+        }
+
+        public NutritionFactsWithBuildMethod build() {
+            return new NutritionFactsWithBuildMethod(this);
+        }
+    }
+
+    private NutritionFactsWithBuildMethod(Builder builder) {
+        servingSize = builder.servingSize;
+        servings = builder.servings;
+        calories = builder.calories;
+        fat = builder.fat;
+        sodium = builder.sodium;
+        carbohydrate = builder.carbohydrate;
+    }
+}
