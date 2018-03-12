@@ -13,7 +13,7 @@ public class Item3Main {
             constructor.setAccessible(true);
 //            Object newSingleton = constructor.newInstance(33);
 //            log.info("new singleton {}", newSingleton);
-//
+
         }
         log.info("singleton field {}", singleton);
         log.info("singleton method {}", SingletonMethod.getInstance());
