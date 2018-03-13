@@ -1,4 +1,4 @@
-package chapter3.item10;
+package chapter3.item10.symmetry;
 
 import lombok.ToString;
 
