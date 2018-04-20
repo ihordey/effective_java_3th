@@ -1,4 +1,4 @@
-package chapter6.item39;
+package chapter6.item39.arithmetic;
 
 public class ArithmeticExceptionTest {
 

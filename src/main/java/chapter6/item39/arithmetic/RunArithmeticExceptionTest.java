@@ -1,4 +1,4 @@
-package chapter6.item39;
+package chapter6.item39.arithmetic;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -26,7 +26,7 @@ public class RunArithmeticExceptionTest {
         int tests = 0;
         int passedTest = 0;
 
-        Class<?> testClass = Class.forName("chapter6.item39.ArithmeticExceptionTest");
+        Class<?> testClass = Class.forName("chapter6.item39.arithmetic.ArithmeticExceptionTest");
         for (Method method : testClass.getDeclaredMethods()) {
             log.info("method : {}", method.getName());
             if (Modifier.isStatic(method.getModifiers()) && method.isAnnotationPresent(ExceptionTest.class)) {
